@@ -31,7 +31,8 @@ public class FileStorageService {
         //FileDB FileDB = new FileDB(fileName, file.getContentType(),file.get);
        // FileDB FileDB = new FileDB(fileName, file.getContentType(), file.getBytes());
        // System.out.println(FileDB.getData());
-        Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
+      //  Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
+        Files.write(Paths.get(System.getProperty("/repgrica/files/")+fileName),file.getBytes());
       //  return fileDBRepository.save(FileDB);
     }
     public FileDB getFile(String id) {
@@ -39,12 +40,14 @@ public class FileStorageService {
     }
 
     public  String getUrlByfileName(String namefile){
-         File name=new File(("user.home")+"/crises/files/"+namefile);
+         //File name=new File(("user.home")+"/crises/files/"+namefile);
+        File name=new File(("/repgrica/files/")+namefile);
             return  name.getAbsolutePath();
     }
     public List<String> getFileRepertoire(){
         List<String> myfile= new ArrayList<String>();
-        File folder = new File("C:\\Users\\waid\\crises\\files\\");
+       // File folder = new File("C:\\Users\\waid\\crises\\files\\");
+        File folder = new File("/repgrica/files/");
         if(folder.exists()){
             for (File file : folder.listFiles()) {
                 myfile.addAll(Collections.singleton(file.getName()));
@@ -62,7 +65,8 @@ public class FileStorageService {
 
     public void supprimerfile(String name){
        // fileDBRepository.supprimerFileByName(name);
-        Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
+      //  Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
+        Path path = FileSystems.getDefault().getPath(System.getProperty("/repgrica/files/")+name);
         try {
             Files.deleteIfExists(path);
         } catch (IOException x) {
@@ -71,7 +75,8 @@ public class FileStorageService {
     }
 
     public void update(MultipartFile file,String name) throws IOException{
-        Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
+       // Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
+        Path path = FileSystems.getDefault().getPath(System.getProperty("/repgrica/files/")+name);
         try {
             Files.deleteIfExists(path);
         } catch (IOException x) {
@@ -79,7 +84,8 @@ public class FileStorageService {
         }
 
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-        Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
+       // Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
+        Files.write(Paths.get(System.getProperty("/repgrica/files/")+fileName),file.getBytes());
 
     }
 }

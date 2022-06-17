@@ -80,7 +80,6 @@ public class FileController {
     }*/
     @GetMapping("/url/bynamefile/{name}")
     public String getFilebyName(@PathVariable("name") String name) {
-        System.out.println("AAAAAAAAAAAAAAAAAAAA"+name.toString());
         return  storageService.getUrlByfileName(name);
     }
 
@@ -111,7 +110,8 @@ public class FileController {
     @GetMapping(value = "/test/{fileName}")
     public ResponseEntity<InputStreamResource> getTermsConditions(@PathVariable("fileName") String fileName) throws FileNotFoundException {
 
-        String filePath = "C:\\Users\\waid\\crises\\files\\";
+        //String filePath = "C:\\Users\\waid\\crises\\files\\";
+        String filePath = "/repgrica/files/";
         File file = new File(filePath+fileName);
         HttpHeaders headers = new HttpHeaders();
         headers.add("content-disposition", "inline;filename=" +fileName);
