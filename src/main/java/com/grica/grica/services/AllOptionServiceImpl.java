@@ -10,6 +10,8 @@ import java.util.Map;
 @Service
 public class AllOptionServiceImpl implements AllOptionService{
     @Autowired
+    private  CatastropheRepository catastropheRepository;
+    @Autowired
     private FreqenceRepository freqenceRepository;
     @Autowired
     private VitesseRepository vitesseRepository;
@@ -24,7 +26,7 @@ public class AllOptionServiceImpl implements AllOptionService{
     public Map<String, Object> getAllOption() {
 
         Map<String, Object> map = new HashMap<String, Object>();
-
+        map.put("catastrophe",catastropheRepository.findAll());
         map.put("vitesse",vitesseRepository.findAll());
         map.put("frequence",freqenceRepository.findAll() );
         map.put("profondeur",profondeurRepository.findAll());

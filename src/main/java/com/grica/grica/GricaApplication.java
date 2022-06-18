@@ -19,5 +19,5 @@ public class GricaApplication  {
 		SpringApplication.run(GricaApplication.class, args);
 	}
 
-
 }
+
