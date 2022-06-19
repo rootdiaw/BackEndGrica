@@ -56,18 +56,18 @@ public class FileStorageService {
         return  myfile;
     }*/
    public List<String> getFileRepertoire(){
-       System.out.println("debut !");
+
        List<String> myfile= new ArrayList<String>();
        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
        File folder = new File("/root/grica/files/");
-       System.out.println("debut 1 !");
+
        if(folder.exists()){
            for (File file : folder.listFiles()) {
                myfile.addAll(Collections.singleton(file.getName()));
-               System.out.println("debut 3!"+file);
+
            }
        }
-       System.out.println("fin !");
+
        return  myfile;
    }
     public List<FileDB> findByName(String name) {

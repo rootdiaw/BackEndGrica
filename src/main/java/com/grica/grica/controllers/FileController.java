@@ -115,7 +115,7 @@ public class FileController {
     public ResponseEntity<InputStreamResource> getTermsConditions(@PathVariable("fileName") String fileName) throws FileNotFoundException {
 
         //String filePath = "C:\\Users\\waid\\crises\\files\\";
-        String filePath = "/repgrica/files/";
+        String filePath = "/root/grica/files/";
         File file = new File(filePath+fileName);
         HttpHeaders headers = new HttpHeaders();
         headers.add("content-disposition", "inline;filename=" +fileName);
