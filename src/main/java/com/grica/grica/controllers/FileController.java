@@ -66,11 +66,15 @@ public class FileController {
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
 */
+   /* @GetMapping
+    public List<String> getFileRepertoire(){
+        return  storageService.getFileRepertoire();
+    }*/
+
     @GetMapping
     public List<String> getFileRepertoire(){
         return  storageService.getFileRepertoire();
     }
-
    /* @GetMapping("/files/{id}")
     public ResponseEntity<byte[]> getFile(@PathVariable String id) {
         FileDB fileDB = storageService.getFile(id);

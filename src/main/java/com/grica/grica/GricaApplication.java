@@ -13,11 +13,21 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GricaApplication  {
+public class GricaApplication implements CommandLineRunner {
+
+	@Autowired
+	private FileStorageService fileStorageService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GricaApplication.class, args);
 	}
 
+	@Override
+	public void run(String... args) throws Exception {
+
+
+		System.out.println("my file"+fileStorageService.getFileRepertoire());
+
+	}
 }
 
