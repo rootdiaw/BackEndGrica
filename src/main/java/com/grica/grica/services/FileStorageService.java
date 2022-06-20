@@ -82,8 +82,10 @@ public class FileStorageService {
        // fileDBRepository.supprimerFileByName(name);
       //  Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
         Path path = FileSystems.getDefault().getPath(System.getProperty("/root/grica/files/")+name);
+        System.out.println("pathhh==="+path);
         try {
             Files.deleteIfExists(path);
+            System.out.println("bla bla!!!");
         } catch (IOException x) {
             System.err.println(x);
         }
