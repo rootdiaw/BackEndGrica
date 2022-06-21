@@ -100,6 +100,9 @@ public class FileController {
 
     @PutMapping("/update/{name}")
     public ResponseEntity<ResponseMessage> uploadUpdateFile(@RequestParam("file") MultipartFile file, String name) {
+
+      System.out.println(name.toString()+"==afficher=="+file.toString());
+
         String message = "";
         try {
             storageService.update(file,name);

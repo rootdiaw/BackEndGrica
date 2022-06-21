@@ -58,7 +58,7 @@ public class ConbinaissonsRestController {
 
     @PostMapping("/name/file")
     public Conbinaissons getConbinaissonsNameFile(@RequestBody Conbinaissons conbinaisson){
-
+System.out.println("ejjeje==="+conbinaisson.toString());
        return conbinaissonsService.getConbinaissonsNamefile(conbinaisson.getCatastrophe().getIdcatastrophe(),
                conbinaisson.getVitesse().getIdvitesse(),conbinaisson.getFrequence().getIdfrequence(),
                conbinaisson.getProfondeur().getIdprofondeur(),
