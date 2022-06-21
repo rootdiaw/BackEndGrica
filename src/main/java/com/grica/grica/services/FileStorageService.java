@@ -26,13 +26,13 @@ public class FileStorageService {
     @Autowired
     private FileDBRepository fileDBRepository;
 
-    public void store(MultipartFile file) throws IOException {
+    public void   store(MultipartFile file) throws IOException {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         //FileDB FileDB = new FileDB(fileName, file.getContentType(),file.get);
        // FileDB FileDB = new FileDB(fileName, file.getContentType(), file.getBytes());
        // System.out.println(FileDB.getData());
       //  Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
-        Files.write(Paths.get(System.getProperty("/root/grica/files/")+fileName),file.getBytes());
+        Files.write(Paths.get("/root/grica/files/"+fileName),file.getBytes());
       //  return fileDBRepository.save(FileDB);
     }
     public FileDB getFile(String id) {
@@ -82,12 +82,8 @@ public class FileStorageService {
        // fileDBRepository.supprimerFileByName(name);
       //  Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
         Path path = FileSystems.getDefault().getPath("/root/grica/files/"+name);
-        
-        System.out.println("pathhh==="+path);
         try {
             Files.deleteIfExists(path);
-
-            System.out.println("bla bla!!!");
         } catch (IOException x) {
             System.err.println(x);
         }
@@ -95,7 +91,7 @@ public class FileStorageService {
 
     public void update(MultipartFile file,String name) throws IOException{
        // Path path = FileSystems.getDefault().getPath(System.getProperty("user.home")+"/crises/files/"+name);
-        Path path = FileSystems.getDefault().getPath(System.getProperty("/root/grica/files/")+name);
+        Path path = FileSystems.getDefault().getPath("/root/grica/files/"+name);
         try {
             Files.deleteIfExists(path);
         } catch (IOException x) {
@@ -104,7 +100,7 @@ public class FileStorageService {
 
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
        // Files.write(Paths.get(System.getProperty("user.home")+"/crises/files/"+fileName),file.getBytes());
-        Files.write(Paths.get(System.getProperty("/root/grica/files/")+fileName),file.getBytes());
+        Files.write(Paths.get("/root/grica/files/"+fileName),file.getBytes());
 
     }
 }
