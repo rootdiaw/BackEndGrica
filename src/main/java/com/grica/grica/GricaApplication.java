@@ -26,7 +26,7 @@ public class GricaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 
-		//System.out.println("my file"+fileStorageService.getFileRepertoire());
+		System.out.println("my file"+fileStorageService.getFileRepertoire());
 
 	}
 }
