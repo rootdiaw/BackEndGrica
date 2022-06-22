@@ -73,6 +73,7 @@ public class FileController {
 
     @GetMapping
     public List<String> getFileRepertoire(){
+        //System.out.println("moi=="+storageService.getFileRepertoire());
         return  storageService.getFileRepertoire();
     }
    /* @GetMapping("/files/{id}")

@@ -60,14 +60,15 @@ public class FileStorageService {
        List<String> myfile= new ArrayList<String>();
        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
        File folder = new File("/root/grica/files/");
+       System.out.println("folder=="+folder);
 
-       if(folder.exists()){
+           System.out.println("folder.listFiles()=="+folder.listFiles());
            for (File file : folder.listFiles()) {
                myfile.addAll(Collections.singleton(file.getName()));
-
+               System.out.println("myfile in for =="+myfile);
            }
-       }
 
+        System.out.println("myfile enf for=="+myfile);
        return  myfile;
    }
     public List<FileDB> findByName(String name) {
