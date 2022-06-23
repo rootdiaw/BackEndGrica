@@ -61,13 +61,13 @@ public class FileStorageService {
        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
        File folder = new File("/root/grica/files/");
        System.out.println("folder=="+folder);
-
-           System.out.println("folder.listFiles()=="+folder.listFiles());
+       System.out.println(" avant folder.listFiles()==" + folder.listFiles());
+       if(folder.exists()) {
+           System.out.println("folder.listFiles()==");
            for (File file : folder.listFiles()) {
                myfile.addAll(Collections.singleton(file.getName()));
-               System.out.println("myfile in for =="+myfile);
            }
-
+       }
         System.out.println("myfile enf for=="+myfile);
        return  myfile;
    }
