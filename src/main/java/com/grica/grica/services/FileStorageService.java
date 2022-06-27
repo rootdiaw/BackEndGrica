@@ -60,14 +60,12 @@ public class FileStorageService {
        List<String> myfile= new ArrayList<String>();
        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
        File folder = new File("/root/grica/files/");
+       String[] paths= folder.list();
        System.out.println("folder=="+folder);
-       System.out.println(" avant folder.listFiles()==" + folder.listFiles());
-       if(folder.exists()) {
-           System.out.println("folder.listFiles()==");
-           for (File file : folder.listFiles()) {
-               myfile.addAll(Collections.singleton(file.getName()));
+       System.out.println(" avant folder.listFiles()==" + paths);
+           for (String file : paths) {
+               myfile.addAll(Collections.singleton(file));
            }
-       }
         System.out.println("myfile enf for=="+myfile);
        return  myfile;
    }

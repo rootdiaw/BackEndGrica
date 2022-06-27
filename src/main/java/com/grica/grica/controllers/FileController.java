@@ -73,7 +73,7 @@ public class FileController {
 
     @GetMapping
     public List<String> getFileRepertoire(){
-        //System.out.println("moi=="+storageService.getFileRepertoire());
+        System.out.println(" alpha delta !!! moi==");
         return  storageService.getFileRepertoire();
     }
    /* @GetMapping("/files/{id}")
