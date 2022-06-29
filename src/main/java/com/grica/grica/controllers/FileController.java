@@ -74,7 +74,7 @@ public class FileController {
         return  storageService.getFileRepertoire();
     }*/
 
-    @GetMapping
+   /* @GetMapping
     public List<String> getFileRepertoire(){
         System.out.println("A");
         List<String> myfile= new ArrayList<String>();
@@ -93,14 +93,14 @@ public class FileController {
         System.out.println("\n-----------------------");
         File[] children = folder.listFiles();
         System.out.println("cccchli=="+children);
-        /*for (File file : children) {
+        for (File file : children) {
             System.out.println(file.getAbsolutePath());
-        }*/
+        }
 
-        /*for (String file : paths) {
+        for (String file : paths) {
             System.out.println("E");
             myfile.addAll(Collections.singleton(file));
-        }*/
+        }
         System.out.println("F");
         System.out.println("myfile enf for=="+myfile);
         return  myfile;
