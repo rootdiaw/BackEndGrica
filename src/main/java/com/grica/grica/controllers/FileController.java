@@ -15,12 +15,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/apifig")
 public class FileController {
@@ -73,8 +76,36 @@ public class FileController {
 
     @GetMapping
     public List<String> getFileRepertoire(){
-        System.out.println(" alpha delta !!! moi==");
-        return  storageService.getFileRepertoire();
+        System.out.println("A");
+        List<String> myfile= new ArrayList<String>();
+        System.out.println("B");
+        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
+        File folder = new File("/root/grica/files/");
+        System.out.println("folder=="+folder);
+
+        System.out.println("C="+folder.listFiles());
+
+        String[] paths= folder.list();
+        System.out.println(" avant folder.list()==" + paths);
+        for (String path : paths) {
+            System.out.println(path);
+        }
+        System.out.println("\n-----------------------");
+        File[] children = folder.listFiles();
+        System.out.println("cccchli=="+children);
+        /*for (File file : children) {
+            System.out.println(file.getAbsolutePath());
+        }*/
+
+        /*for (String file : paths) {
+            System.out.println("E");
+            myfile.addAll(Collections.singleton(file));
+        }*/
+        System.out.println("F");
+        System.out.println("myfile enf for=="+myfile);
+        return  myfile;
+
+        //return  storageService.getFileRepertoire();
     }
    /* @GetMapping("/files/{id}")
     public ResponseEntity<byte[]> getFile(@PathVariable String id) {
