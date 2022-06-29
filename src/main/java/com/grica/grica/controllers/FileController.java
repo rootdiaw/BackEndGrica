@@ -74,7 +74,7 @@ public class FileController {
         return  storageService.getFileRepertoire();
     }*/
 
-   /* @GetMapping
+    @GetMapping
     public List<String> getFileRepertoire(){
         System.out.println("A");
         List<String> myfile= new ArrayList<String>();
