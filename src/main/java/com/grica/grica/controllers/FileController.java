@@ -80,7 +80,7 @@ public class FileController {
         List<String> myfile= new ArrayList<String>();
         System.out.println("B");
         // File folder = new File("C:\\Users\\waid\\crises\\files\\");
-        File folder = new File("/diawadmin/grica/files/");
+        File folder = new File("/root/grica/files/");
         System.out.println("folder=="+folder);
 
         System.out.println("C="+folder.listFiles());
@@ -150,7 +150,7 @@ public class FileController {
     public ResponseEntity<InputStreamResource> getTermsConditions(@PathVariable("fileName") String fileName) throws FileNotFoundException {
 
         //String filePath = "C:\\Users\\waid\\crises\\files\\";
-        String filePath = "/diawadmin/grica/files/";
+        String filePath = "/root/grica/files/";
         File file = new File(filePath+fileName);
         HttpHeaders headers = new HttpHeaders();
         headers.add("content-disposition", "inline;filename=" +fileName);
