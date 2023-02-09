@@ -61,12 +61,12 @@ public class FileStorageService {
        // File folder = new File("C:\\Users\\waid\\crises\\files\\");
        File folder = new File("/root/grica/files/");
        String[] paths= folder.list();
-       System.out.println("folder=="+folder);
-       System.out.println(" avant folder.listFiles()==" + paths);
+      // System.out.println("folder=="+folder);
+      // System.out.println(" avant folder.listFiles()==" + paths);
            for (String file : paths) {
                myfile.addAll(Collections.singleton(file));
            }
-        System.out.println("myfile enf for=="+myfile);
+       // System.out.println("myfile enf for=="+myfile);
        return  myfile;
    }
     public List<FileDB> findByName(String name) {

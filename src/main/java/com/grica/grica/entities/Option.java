@@ -20,7 +20,7 @@ public class Option implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idoption;
-    private  String libelle;
+    private String libelle;
     @ManyToMany
     private List<SousOption> sousOptions;
 }

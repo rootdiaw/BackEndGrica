@@ -76,33 +76,25 @@ public class FileController {
 
     @GetMapping
     public List<String> getFileRepertoire(){
-        System.out.println("A");
+
         List<String> myfile= new ArrayList<String>();
-        System.out.println("B");
         // File folder = new File("C:\\Users\\waid\\crises\\files\\");
         File folder = new File("/root/grica/files/");
-        System.out.println("folder=="+folder);
-
-        System.out.println("C="+folder.listFiles());
-
         String[] paths= folder.list();
-        System.out.println(" avant folder.list()==" + paths);
+        /*System.out.println(" avant folder.list()==" + paths);
         for (String path : paths) {
             System.out.println(path);
-        }
-        System.out.println("\n-----------------------");
+        }*/
+       /* System.out.println("\n-----------------------");
         File[] children = folder.listFiles();
         System.out.println("cccchli=="+children);
         for (File file : children) {
             System.out.println(file.getAbsolutePath());
-        }
-
+        }*/
         for (String file : paths) {
-            System.out.println("E");
             myfile.addAll(Collections.singleton(file));
         }
-        System.out.println("F");
-        System.out.println("myfile enf for=="+myfile);
+
         return  myfile;
 
         //return  storageService.getFileRepertoire();
@@ -133,7 +125,7 @@ public class FileController {
     @PutMapping("/update/{name}")
     public ResponseEntity<ResponseMessage> uploadUpdateFile(@RequestParam("file") MultipartFile file, String name) {
 
-      System.out.println(name.toString()+"==afficher=="+file.toString());
+     // System.out.println(name.toString()+"==afficher=="+file.toString());
 
         String message = "";
         try {
